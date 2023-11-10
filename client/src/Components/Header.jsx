@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import LOGO from '../public/assets/logo.png'
-import WHISHLIST from '../public/assets/wishlist.png'
+import LOGO from '../assets/logo.png'
+import WHISHLIST from '../assets/wishlist.png'
 import { useDispatch } from 'react-redux';
 import { setSetAuthStatus } from "../slices/authSlice";
 
