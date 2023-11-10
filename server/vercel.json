@@ -1,6 +1,6 @@
 {
    "version": 2,
-   "name": "form-builder",
+   "name": "petstore",
    "builds": [
       { "src": "/server.js", "use": "@vercel/node" }
    ],
