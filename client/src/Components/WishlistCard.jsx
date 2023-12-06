@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteWishlistItemAsync } from '../slices/wishlistSLice'
+import { deleteWishlistItemAsync } from '../slices/wishlistSlice'
 
 const WishlistCard = ({card}) => {
   const dispatch = useDispatch()
