@@ -16,7 +16,7 @@ export const addWishlistItemAsync = createAsyncThunk('wishlist/addWishlistItem',
       'Content-Type': 'application/json'
     },
   });
-  return item.id;
+  return item;
 });
 
 export const deleteWishlistItemAsync = createAsyncThunk('wishlist/deleteWishlistItem', async (item) => {
@@ -51,7 +51,6 @@ const wishlistSlice = createSlice({
       });
   },
 });
-
 
 
 export default wishlistSlice.reducer;

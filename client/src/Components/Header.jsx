@@ -4,21 +4,23 @@ import { useSelector } from 'react-redux';
 import LOGO from '../public/assets/logo.png'
 import WHISHLIST from '../public/assets/wishlist.png'
 import { useDispatch } from 'react-redux';
-import { setSetAuthStatus } from "../slices/authSlice";
+import { logout } from "../slices/authSlice";
 
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const user = useSelector((state) => state.auth.userName);
   const dispatch = useDispatch();
 
-  const hanldeLogOut = () =>{
-    dispatch(setSetAuthStatus(false))
+  console.log('dwadwad')
+  const handleLogout = () =>{
+    dispatch(logout())
   }
-  
+
   return (
     <div className='bg-cyan-200 h-24 text-black text-xl'>
       <div className='w-8/12 mx-auto flex'>
-        <img className='w-20 mt-2' src={LOGO} />
-        <div className='my-auto italic ml-3 font-medium text-cyan-700'>Buying commodities is one thing,<br/> buying real life cuties is another.</div>
+        <Link to='/'><img className='w-20 mt-2' src={LOGO} /></Link>
+        {isLoggedIn && <div className='m-auto font-medium'>{user}</div>}
         <div className='mx-auto my-auto'>
           {
             isLoggedIn && 
@@ -26,7 +28,7 @@ const Header = () => {
           }
         </div>
           <div to='login' className='m-auto font-medium hover:cursor-pointer'>
-            {isLoggedIn ? <span onClick={hanldeLogOut}>Logout</span> : <Link to='login'>Login</Link>}
+            {isLoggedIn ? <span onClick={handleLogout}>Logout</span> : <Link to='login'>Login</Link>}
           </div>
       </div>
     </div>

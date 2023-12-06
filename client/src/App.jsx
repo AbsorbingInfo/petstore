@@ -10,6 +10,7 @@ import Details from "./Components/Details";
 import ErrorLayout from "./Components/ErrorLayout";
 import Wishlist from "./Components/Wishlist";
 import Login from "./Components/Login";
+import Signup from "./Components/Signup";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { fetchPets } from './slices/petsSlice';
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
       {
         path:'login',
         element:<Login />
+      },
+      {
+        path:'signup',
+        element:<Signup />
       },
       {
         path:'wishlist',
