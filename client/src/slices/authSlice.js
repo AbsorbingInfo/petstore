@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const login = createAsyncThunk('auth/login', async (body) => {
-  const response = await fetch(`http://localhost:4000/api/login`, {
+  const response = await fetch(`https://petstore-api-cyan.vercel.app/api/login`, {
     method: 'POST',
     body: JSON.stringify(body),
     headers: {

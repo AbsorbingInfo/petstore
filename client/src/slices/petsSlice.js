@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit';
 
 export const fetchPets = createAsyncThunk('petstore/fetchPets', async () => {
 
-  const response = await fetch('http://localhost:4000/api/pets');
+  const response = await fetch('https://petstore-api-cyan.vercel.app/api/pets');
   const data = await response.json();
   return data;
 });

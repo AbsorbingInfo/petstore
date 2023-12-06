@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit';
 
 export const fetchWishlist = createAsyncThunk('wishlist/fetchWishlist', async () => {
-  const response = await fetch('http://localhost:4000/api/wishlist');
+  const response = await fetch('https://petstore-api-cyan.vercel.app/api/wishlist');
   const data = await response.json();
   return data;
 });
@@ -9,7 +9,7 @@ export const fetchWishlist = createAsyncThunk('wishlist/fetchWishlist', async ()
 export const addWishlistItemAsync = createAsyncThunk('wishlist/addWishlistItem', async (item) => {
   
   const cleanItem = {id: item.id, name: item.name, img: item.img, rate: item.rate}
-  await fetch(`http://localhost:4000/api/wishlist`, {
+  await fetch(`https://petstore-api-cyan.vercel.app/api/wishlist`, {
     method: 'POST',
     body: JSON.stringify(cleanItem),
     headers: {
@@ -21,7 +21,7 @@ export const addWishlistItemAsync = createAsyncThunk('wishlist/addWishlistItem',
 
 export const deleteWishlistItemAsync = createAsyncThunk('wishlist/deleteWishlistItem', async (item) => {
   console.log('rannnn',item)
-  await fetch(`http://localhost:4000/api/deletewishlist`, {
+  await fetch(`https://petstore-api-cyan.vercel.app/api/deletewishlist`, {
     method: 'POST',
     body: JSON.stringify(item),
     headers: {

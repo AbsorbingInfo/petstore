@@ -11,7 +11,7 @@ const Signup = () => {
     e.preventDefault()
     if(confirmPassword === password){
       console.log('ran')
-      const response = await fetch(`http://localhost:4000/api/register`, {
+      const response = await fetch(`https://petstore-api-cyan.vercel.app/api/register`, {
         method: 'POST',
         body: JSON.stringify({email, password}),
         headers: {
